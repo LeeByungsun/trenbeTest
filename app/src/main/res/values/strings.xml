@@ -5,4 +5,9 @@
     <string name="tab_text_3">여성</string>
     <string name="tab_text_4">남성</string>
     <string name="tab_text_5">세일</string>
+    <string name="bottom_button_text1">홈</string>
+    <string name="bottom_button_text2">소셜</string>
+    <string name="bottom_button_text3">업로드</string>
+    <string name="bottom_button_text4">알림</string>
+    <string name="bottom_button_text5">프로필</string>
 </resources>
