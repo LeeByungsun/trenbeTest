@@ -1,8 +1,8 @@
-package com.buggyani.riiid.network
+package com.trenbe.test.network
 
-import com.buggyani.riiid.network.vo.CategoriResposeVo
+import com.trenbe.test.network.vo.CategoriResposeVo
 import io.reactivex.Observable
-import retrofit2.http.*
+import retrofit2.http.GET
 
 /**
  * Created by bslee on 2019-3-10
@@ -12,7 +12,7 @@ interface TrenbeAPIInfo {
 
     //posts 가져오기
     @GET("categories.json")
-    fun getList(): Observable<ArrayList<CategoriResposeVo>>
+    fun getList(): Observable<CategoriResposeVo>
 
 
     companion object {

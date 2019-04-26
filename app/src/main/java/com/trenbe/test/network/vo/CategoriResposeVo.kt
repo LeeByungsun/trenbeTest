@@ -1,4 +1,4 @@
-package com.buggyani.riiid.network.vo
+package com.trenbe.test.network.vo
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable

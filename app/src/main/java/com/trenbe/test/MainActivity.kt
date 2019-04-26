@@ -2,12 +2,9 @@ package com.trenbe.test
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import com.trenbe.test.ui.main.SectionsPagerAdapter
+import com.trenbe.test.TestApplication.Companion.density
+import com.trenbe.test.ui.main.adapter.SectionsPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
-import android.util.DisplayMetrics
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         val metrics = resources.displayMetrics
 
         val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
+        density = metrics.density
         println("density = $metrics")
         view_pager.adapter = sectionsPagerAdapter
         tabs.run {

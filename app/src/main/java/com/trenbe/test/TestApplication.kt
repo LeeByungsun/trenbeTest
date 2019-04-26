@@ -2,9 +2,8 @@ package com.trenbe.test
 
 import android.app.Application
 import android.content.Context
-import com.buggyani.riiid.network.TrenbeAPIInfo
 import com.trenbe.test.GlobalStatic.DEBUG
-
+import com.trenbe.test.network.TrenbeAPIInfo
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -54,6 +53,7 @@ class TestApplication : Application() {
         var instance: TestApplication? = null
             private set
         var retrofitServer: Retrofit? = null
+        var density : Float ?= null
         lateinit var trenbeApiServer: TrenbeAPIInfo
     }
 

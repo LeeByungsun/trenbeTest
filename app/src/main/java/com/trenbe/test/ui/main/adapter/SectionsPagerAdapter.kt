@@ -1,10 +1,12 @@
-package com.trenbe.test.ui.main
+package com.trenbe.test.ui.main.adapter
 
 import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.trenbe.test.R
+import com.trenbe.test.ui.main.PlaceholderFragment
+import com.trenbe.test.ui.main.WomanFragment
 
 private val TAB_TITLES = arrayOf(
     R.string.tab_text_1,
@@ -12,7 +14,7 @@ private val TAB_TITLES = arrayOf(
     R.string.tab_text_3,
     R.string.tab_text_4,
     R.string.tab_text_5
-    )
+)
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -23,7 +25,11 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) : 
     override fun getItem(position: Int): Fragment {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1)
+        when (position) {
+            2 -> return WomanFragment.newInstance(position)
+            else -> return PlaceholderFragment.newInstance(position + 1)
+        }
+
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
