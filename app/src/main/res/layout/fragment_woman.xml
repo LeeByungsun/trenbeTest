@@ -12,5 +12,14 @@
             android:layout_height="match_parent"
             android:id="@+id/recyclerview"
     />
+    <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/recyclerview"
+            app:layout_constraintStart_toStartOf="@+id/recyclerview" android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/recyclerview" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="@+id/recyclerview"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

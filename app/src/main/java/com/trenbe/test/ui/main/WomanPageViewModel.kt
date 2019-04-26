@@ -13,25 +13,15 @@ import io.reactivex.schedulers.Schedulers
 
 class WomanPageViewModel : ViewModel() {
 
-//    private val _index = MutableLiveData<Int>()
     var categoryList: MutableLiveData<List<Categori>>? = null
     private var disposable: Disposable? = null
-//    val text: LiveData<String> = Transformations.map(_index) {
-//        "Hello world from section: $it"
-//    }
-//
-//    fun setIndex(index: Int) {
-//        _index.value = index
-//    }
+
 
     fun getList(): LiveData<List<Categori>> {
-        //if the list is null
         if (categoryList == null) {
             categoryList = MutableLiveData<List<Categori>>()
-            //we will load it asynchronously from server in this method
             loadCategories()
         }
-
         return categoryList as MutableLiveData<List<Categori>>
     }
 
@@ -41,8 +31,6 @@ class WomanPageViewModel : ViewModel() {
     }
 
     private fun loadCategories() {
-
-
         disposable = trenbeApiServer.getList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
