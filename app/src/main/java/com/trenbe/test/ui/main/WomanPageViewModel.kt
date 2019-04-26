@@ -19,7 +19,7 @@ class WomanPageViewModel : ViewModel() {
 
     fun getList(): LiveData<List<Categori>> {
         if (categoryList == null) {
-            categoryList = MutableLiveData<List<Categori>>()
+            categoryList = MutableLiveData()
             loadCategories()
         }
         return categoryList as MutableLiveData<List<Categori>>

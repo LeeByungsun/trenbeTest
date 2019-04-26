@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
@@ -24,10 +23,8 @@ class WomanFragment : Fragment() {
     private lateinit var pageViewModel: WomanPageViewModel
     private lateinit var mAdapter: WomanListAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
-        val TAG = javaClass.simpleName
 
         super.onCreate(savedInstanceState)
-        println(TAG)
         pageViewModel = ViewModelProviders.of(this).get(WomanPageViewModel::class.java).apply {
             getList()
         }
@@ -38,11 +35,6 @@ class WomanFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_woman, container, false)
-//        val textView: TextView = root.findViewById(R.id.section_label)
-//        pageViewModel.text.observe(this, Observer<String> {
-//            textView.text = it
-//        })
-//        progress.visibility = View.INVISIBLE
         val progressbar: ProgressBar = root.findViewById(R.id.progress)
         progressbar.visibility = View.VISIBLE
         pageViewModel.categoryList?.observe(this, Observer {
